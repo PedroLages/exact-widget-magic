@@ -13,11 +13,10 @@ const GaugeWidget = ({
   title = "Day win %",
   legendValues = [8, 0, 12]
 }: GaugeWidgetProps) => {
-  // All segments are always visible
+  // Only green and red segments
   const data = [
-    { value: 33, color: "hsl(var(--gauge-success))" },
-    { value: 33, color: "hsl(var(--gauge-neutral))" },
-    { value: 34, color: "hsl(var(--gauge-danger))" },
+    { value: 50, color: "hsl(var(--gauge-success))" },
+    { value: 50, color: "hsl(var(--gauge-danger))" },
   ];
   const colors = ["hsl(var(--gauge-success))", "hsl(var(--gauge-neutral))", "hsl(var(--gauge-danger))"];
 
