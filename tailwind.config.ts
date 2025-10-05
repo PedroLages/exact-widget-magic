@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        gauge: {
+          success: "hsl(var(--gauge-success))",
+          neutral: "hsl(var(--gauge-neutral))",
+          danger: "hsl(var(--gauge-danger))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
