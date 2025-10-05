@@ -13,21 +13,12 @@ const GaugeWidget = ({
   title = "Day win %",
   legendValues = [8, 0, 12]
 }: GaugeWidgetProps) => {
-  // Calculate segments based on percentage
-  const getSegments = (value: number) => {
-    const segments = [
-      { value: 33, color: "hsl(var(--gauge-success))", active: value >= 0 },
-      { value: 33, color: "hsl(var(--gauge-neutral))", active: value >= 34 },
-      { value: 34, color: "hsl(var(--gauge-danger))", active: value >= 67 },
-    ];
-    
-    return segments.map((segment) => ({
-      ...segment,
-      opacity: segment.active ? 1 : 0.3,
-    }));
-  };
-
-  const data = getSegments(percentage);
+  // All segments are always visible
+  const data = [
+    { value: 33, color: "hsl(var(--gauge-success))" },
+    { value: 33, color: "hsl(var(--gauge-neutral))" },
+    { value: 34, color: "hsl(var(--gauge-danger))" },
+  ];
   const colors = ["hsl(var(--gauge-success))", "hsl(var(--gauge-neutral))", "hsl(var(--gauge-danger))"];
 
   return (
@@ -64,7 +55,6 @@ const GaugeWidget = ({
                   <Cell
                     key={`cell-${index}`}
                     fill={entry.color}
-                    opacity={entry.opacity}
                     strokeWidth={0}
                   />
                 ))}
